@@ -1,0 +1,13 @@
+moviepy==1.0.3
+librosa==0.10.1
+scenedetect==0.6.2
+numpy==1.26.2
+openai-whisper==20231117
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.0.1+cpu
+tqdm==4.66.1
+ffmpeg-python==0.2.0
+python-magic==0.4.27
+pillow==10.1.0
+opencv-python==4.8.0.76
+colorama==0.4.6

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DShorts - Prototype</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DShorts Prototype</h1>
+            <p>Transformez vos vidéos longues en formats courts optimisés</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="upload-section">
+            <h2>Importer une vidéo</h2>
+            <div class="card">
+                <div class="upload-zone" id="drop-zone">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                    <p>Déposez votre vidéo ici ou <span class="highlight">cliquez pour choisir un fichier</span></p>
+                    <p class="upload-limits">Formats acceptés : MP4, MOV, AVI, WEBM (Max 500 MB, 10 min)</p>
+                    <input type="file" id="file-input" accept="video/mp4,video/quicktime,video/avi,video/webm" hidden>
+                </div>
+
+                <div class="options">
+                    <h3>Options</h3>
+                    <div class="option-group">
+                        <label for="num-shorts">Nombre de shorts à générer:</label>
+                        <input type="number" id="num-shorts" min="1" max="10" value="3">
+                    </div>
+                    <div class="option-group">
+                        <label for="min-duration">Durée minimale (secondes):</label>
+                        <input type="number" id="min-duration" min="5" max="30" value="10">
+                    </div>
+                    <div class="option-group">
+                        <label for="max-duration">Durée maximale (secondes):</label>
+                        <input type="number" id="max-duration" min="15" max="120" value="60">
+                    </div>
+                    <div class="option-group">
+                        <label for="whisper-model">Modèle Whisper:</label>
+                        <select id="whisper-model">
+                            <option value="tiny">Tiny (rapide, moins précis)</option>
+                            <option value="base" selected>Base (équilibré)</option>
+                            <option value="small">Small (précis, plus lent)</option>
+                            <option value="medium">Medium (très précis, lent)</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label for="language">Langue:</label>
+                        <select id="language">
+                            <option value="fr" selected>Français</option>
+                            <option value="en">Anglais</option>
+                            <option value="es">Espagnol</option>
+                            <option value="de">Allemand</option>
+                        </select>
+                    </div>
+                    <button id="upload-btn" class="btn btn-primary">Démarrer le traitement</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress-section" style="display: none;">
+            <h2>Traitement en cours</h2>
+            <div class="card">
+                <div id="progress-filename" class="filename"></div>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div id="progress-message" class="progress-message">Initialisation...</div>
+                <button id="cancel-btn" class="btn btn-secondary">Annuler</button>
+            </div>
+        </section>
+
+        <section id="results-section" style="display: none;">
+            <h2>Shorts générés</h2>
+            <div class="card">
+                <div id="results-filename" class="filename"></div>
+                <div id="results-message" class="results-message"></div>
+                <div id="shorts-container" class="shorts-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>DShorts Prototype &copy; 2024</p>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification">
+        <span id="notification-message"></span>
+        <button id="notification-close">&times;</button>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
