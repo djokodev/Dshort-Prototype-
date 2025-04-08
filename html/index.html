@@ -11,6 +11,7 @@
         <div class="container">
             <h1>DShorts Prototype</h1>
             <p>Transformez vos vidéos longues en formats courts optimisés</p>
+            <div class="version-tag">Version 1.1 - Découpage intelligent et performances optimisées</div>
         </div>
     </header>
 
@@ -33,6 +34,9 @@
 
                 <div class="options">
                     <h3>Options</h3>
+                    <div class="features-info">
+                        <span class="info-tag">Nouveau!</span> Découpage intelligent en fin de phrase et traitement 2x plus rapide
+                    </div>
                     <div class="option-group">
                         <label for="num-shorts">Nombre de shorts à générer:</label>
                         <input type="number" id="num-shorts" min="1" max="10" value="3">
@@ -48,8 +52,8 @@
                     <div class="option-group">
                         <label for="whisper-model">Modèle Whisper:</label>
                         <select id="whisper-model">
-                            <option value="tiny">Tiny (rapide, moins précis)</option>
-                            <option value="base" selected>Base (équilibré)</option>
+                            <option value="tiny" selected>Tiny (rapide, recommandé)</option>
+                            <option value="base">Base (équilibré)</option>
                             <option value="small">Small (précis, plus lent)</option>
                             <option value="medium">Medium (très précis, lent)</option>
                         </select>

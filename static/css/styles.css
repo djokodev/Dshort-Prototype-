@@ -48,6 +48,15 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
+.version-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
 footer {
     background-color: var(--text-color);
     color: white;
@@ -125,6 +134,25 @@ p {
     background-color: rgba(67, 97, 238, 0.05);
     border-radius: var(--border-radius);
     padding: 1.5rem;
+}
+
+.features-info {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left: 4px solid var(--success-color);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.info-tag {
+    background-color: var(--success-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .option-group {
